@@ -26,7 +26,7 @@
     "jwt-decode": "^2.2.0",
     "moment": "^2.24.0",
     "mongodb": "^3.6.3",
-    "mongoose": "^5.5.14",
+    "mongoose": "^5.7.5",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "plaid": "^4.0.0",
