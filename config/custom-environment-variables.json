@@ -1,4 +1,0 @@
-{
-    "jwtPrivateKey":"betterFinance_jwtPrivateKey",
-    "mongoURI":"mongodb+srv://sparky:Ricci0608@better-finance.fedyt.mongodb.net/better_finance?retryWrites=true&w=majority"
-}

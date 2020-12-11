@@ -1,7 +1,0 @@
-{
-    "jwtPrivateKey":"betterFinance_jwtPrivateKey",
-    "mongoURI":"mongodb+srv://sparky:Ricci0608@better-finance.fedyt.mongodb.net/better_finance?retryWrites=true&w=majority",
-    "PLAID_CLIENT_ID": "5cf152cd6590ed001352c2c0",
-    "PLAID_SECRET":"5146288db32055a366fdbe32266b94",
-    "PLAID_PUBLIC_KEY":"c0905d93c6b04954e0465105254b09"
-}
