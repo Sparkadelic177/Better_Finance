@@ -12,11 +12,10 @@ import Spendings from "./components/Spendings"
 import './styles/App.css';
 
 class App extends Component {
-  render(){  
+  render() {
     return (
       <Router>
         <div className="App">
-          <Navbar />
           <Route exact path="/" component={Landing} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
@@ -26,7 +25,7 @@ class App extends Component {
           <Route exact path="/spendings" component={Spendings} />
         </div>
       </Router>
-      
+
     );
   }
 }
