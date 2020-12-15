@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import '../../styles/Register.css'
+import '../styles/Register.css'
 
 class Register extends Component {
   constructor() {
@@ -36,8 +36,6 @@ class Register extends Component {
       this.props.history.push("/home");
     })
     .catch((error) => alert(error.response.data));
-
-
   };
 
   render() {

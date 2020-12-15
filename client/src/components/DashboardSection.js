@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/Section.css"
+import "../styles/Section.css"
 
 const DashboardSection = ({ date, category, amount }) => {
     return (

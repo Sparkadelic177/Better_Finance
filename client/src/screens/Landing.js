@@ -1,18 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import '../../styles/Landing.css'
-class Landing extends Component {
-  render() {
+import '../styles/Landing.css'
+
+function Landing() {
     return (
         <div className="landingContainer">
             <h2>
-            <b>Track</b> <span className="inner-container-text">Your Finances Better Than Before</span>
+                <b>Track</b> <span className="inner-container-text">Your Finances Better Than Before</span>
             </h2>
             <h3 className="inner-container-description">
-            Search all your transactions, Track Your Networth, Make your way to debt free zone, and more...
+                Search all your transactions, Track Your Networth, Make your way to debt free zone, and more...
             </h3>
             <br />
-            <div className = "both-btn" >
+            <section className = "both-btn" >
                 <div className="register-btn">
                     <Link
                         to="/register"
@@ -39,9 +39,8 @@ class Landing extends Component {
                         Log In
                     </Link>
                 </div>
-            </div>
+            </section>
         </div>
     );
-  }
 }
 export default Landing;

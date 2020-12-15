@@ -1,5 +1,5 @@
 import React from 'react';
-import "../../styles/Spendings.css";
+import "../styles/Spendings.css";
 
 
 //this helper changes the percentage bar when ever the user inputs a number on the input

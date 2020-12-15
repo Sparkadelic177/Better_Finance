@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import DashboardSection from "./layout/DashboardSection"
+import DashboardSection from "../components/DashboardSection"
 import "../styles/Dashboard.css";
 
 
@@ -12,6 +12,7 @@ class Dashboard extends React.Component {
             transactions: [],
             balance: 0,
         }
+        this.init = this.init.bind(this)
     }
 
     //checking if the user is logged in yet
@@ -23,33 +24,30 @@ class Dashboard extends React.Component {
 
     //call for the users transactions
     componentDidMount() {
-        //this call is to get the users transactions for the last month
-        axios.post("/api/plaid/accounts/transactions", null,
-            {
-                headers: { "x-auth-token": sessionStorage.getItem("key") }
-            }).then((results) => {
-                this.setState({
-                    transactions: results.data.map(result => {
-                        return result.transactions;
-                    })
-                });
-                console.log(this.state.transactions);
-            }).then(() => {
-                this.setState({ transactions: this.state.transactions[0] })
-            }).catch(err => console.log(err));
+        try{ 
+            this.init();
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
 
-        //this calls is to get the users total balance
-        axios.post("/api/plaid/account/balance", null,
-            {
-                headers: { "x-auth-token": sessionStorage.getItem("key") }
-            }).then((results) => {
-                console.log(results.data);
-                this.setState({
-                    balance: results.data.netWorth.balance,
-                    name: results.data.name
-                })
-                console.log(`this the networth ${this.state.balance} and this is the debt ${this.state.debt}`)
-            }).catch((err) => console.log(err));
+    async init(){
+        const header = {headers: { "x-auth-token": sessionStorage.getItem("key")}};
+        
+        const results = await Promise.all([
+            axios.post("/api/plaid/account/balance", null,header),
+            axios.post("/api/plaid/accounts/transactions", null,header)
+        ])
+
+        this.setState({
+            balance: results[0].data.netWorth.balance,
+            name: results[0].data.name
+        })
+
+        const transactions = results[1].data.map(result => result.transactions );
+        this.setState({ transactions: transactions[0]})
+
     }
 
 

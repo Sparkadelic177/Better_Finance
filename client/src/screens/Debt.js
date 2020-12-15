@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import DebtSection from "./layout/DebtSection.js"
+import DebtSection from "../components/DebtSection.js"
 import "../styles/Debt.css";
 
 

@@ -1,12 +1,12 @@
 {
   "name": "betterfinance",
   "version": "1.0.0",
-  "description": "a way to better your finances",
-  "main": "server.js",
+  "description": "A way to better your finances",
+  "main": "index.js",
   "scripts": {
     "client-install": "npm install --prefix client",
-    "start": "node server.js",
-    "server": "nodemon server.js",
+    "start": "node index.js",
+    "server": "nodemon index.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },

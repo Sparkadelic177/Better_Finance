@@ -1,5 +1,5 @@
 import React from 'react';
-import "../../styles/DebtSection.css";
+import "../styles/DebtSection.css";
 
 export default function DebtSection({ name, amount }) {
     return (

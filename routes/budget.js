@@ -1,11 +1,11 @@
 const router = require("express").Router();
-const asyncErrorHandler = require("../middleware/async");
+const asyncMiddleWare = require("../middleware/async");
 const auth = require("../middleware/auth");
 const Account = require("../models/Account");
 
 
 //this route gets the budget in the databse
-router.get("/getBudget", auth, asyncErrorHandler(async (req, res) => {
+router.get("/getBudget", auth, asyncMiddleWare(async (req, res) => {
     const user = req.user._id;
     const budget = await Account.findOne({ userId: user });
     res.send(budget.budget);
@@ -13,10 +13,10 @@ router.get("/getBudget", auth, asyncErrorHandler(async (req, res) => {
 
 
 //this route save the budget in the database
-router.post("/saveBudget", auth, asyncErrorHandler(async (req, res, next) => {
+router.post("/saveBudget", auth, asyncMiddleWare(async (req, res) => {
     const user = req.user._id
     const data = req.body.data;
-    console.log(data);
+
     //save the data in data
     const dataSaved = await Account.updateMany({ userId: user }, {
         $set: {
